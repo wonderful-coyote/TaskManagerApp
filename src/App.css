@@ -63,6 +63,11 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btn, .btn-task {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #007bff;

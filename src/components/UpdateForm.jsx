@@ -23,7 +23,7 @@ const UpdateForm = ({ task, cancelEdit, updateTask }) => {
           value={updatedTask}
           onChange={(e) => setUpdatedTask(e.target.value)}
         />
-        <div className="input-group-append">
+        <div className="input-group-append button-container">
           <button type="submit" className="btn btn-outline-primary btn-success">
             Save
           </button>

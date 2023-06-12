@@ -45,7 +45,7 @@ const TaskItem = ({
             />
             <span className="ml-2">{task.task}</span>
           </div>
-          <div>
+          <div className="input-group-append button-container">
             {!task.completed && (
               <button
                 className="btn btn-outline-primary btn-sm mr-2"
