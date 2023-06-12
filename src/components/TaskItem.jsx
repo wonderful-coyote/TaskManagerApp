@@ -8,6 +8,7 @@ const TaskItem = ({
   markTaskAsCompleted,
   editingTaskId,
   cancelEdit,
+  index,
   updateTask,
 }) => {
   const handleDelete = () => {
@@ -45,15 +46,16 @@ const TaskItem = ({
             <span className="ml-2">{task.task}</span>
           </div>
           <div>
+            {!task.completed && (
+              <button
+                className="btn btn-outline-primary btn-sm mr-2"
+                onClick={handleEdit}
+              >
+                Edit
+              </button>
+            )}
             <button
-              className="btn btn-outline-primary btn-sm mr-2"
-              onClick={handleEdit}
-              disabled={task.completed} // Disable the Edit button if task is completed
-            >
-              Edit
-            </button>
-            <button
-              className="btn btn-outline-danger btn-sm"
+              className={`btn btn-outline-danger btn-sm ${task.completed ? 'opacity-100' : ''}`}
               onClick={handleDelete}
             >
               Delete

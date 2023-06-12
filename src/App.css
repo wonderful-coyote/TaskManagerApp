@@ -40,6 +40,15 @@
   opacity: 0.5;
 }
 
+.list-group-item .edit-button {
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.list-group-item.completed .edit-button {
+  opacity: 0.5;
+}
+
 .form-control {
   display: block;
   width: 100%;

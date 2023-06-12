@@ -24,12 +24,12 @@ const UpdateForm = ({ task, cancelEdit, updateTask }) => {
           onChange={(e) => setUpdatedTask(e.target.value)}
         />
         <div className="input-group-append">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-outline-primary btn-success">
             Save
           </button>
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-outline-danger btn-secondary"
             onClick={handleCancel}
           >
             Cancel
