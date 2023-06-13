@@ -14,15 +14,25 @@ const UpdateForm = ({ task, cancelEdit, updateTask }) => {
     cancelEdit();
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSave(e);
+    }
+  };
+
   return (
     <form onSubmit={handleSave}>
       <div className="input-group">
-        <input
-          type="text"
-          className="form-control"
-          value={updatedTask}
-          onChange={(e) => setUpdatedTask(e.target.value)}
-        />
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            rows="3"
+            value={updatedTask}
+            onChange={(e) => setUpdatedTask(e.target.value)}
+            onKeyDown={handleKeyDown}
+          ></textarea>
+        </div>
         <div className="input-group-append button-container">
           <button type="submit" className="btn btn-outline-primary btn-success">
             Save

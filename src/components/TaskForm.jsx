@@ -16,16 +16,26 @@ const TaskForm = ({ addTask }) => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter task"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            rows="3"
+            placeholder="Enter task"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            onKeyDown={handleKeyDown}
+          ></textarea>
+        </div>
         <button type="submit" className="btn btn-primary btn-task">
           Add Task
         </button>
